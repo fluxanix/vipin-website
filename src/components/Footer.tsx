@@ -20,6 +20,16 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-colors inline-flex items-center justify-center gap-2 text-base sm:text-lg"
+              onClick={() => {
+                // Google Ads conversion tracking
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'conversion', {
+                    'send_to': 'AW-17301984142/34eACMzU7vUaEI6nnbpA',
+                    'value': 1.0,
+                    'currency': 'INR'
+                  });
+                }
+              }}
             >
               Start Your Project
               <ArrowRight size={20} />
@@ -98,6 +108,14 @@ const Footer = () => {
 
         <div className="mt-10 sm:mt-16 pt-6 sm:pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center text-muted-foreground text-xs sm:text-sm gap-2 sm:gap-0">
           <div>© 2025 Vipin Graphics. All rights reserved.</div>
+          <div className="flex items-center gap-4">
+            <a 
+              href="/privacy-policy" 
+              className="hover:text-foreground transition-colors"
+            >
+              Privacy Policy
+            </a>
+          </div>
         </div>
       </div>
     </footer>

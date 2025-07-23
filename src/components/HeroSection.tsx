@@ -48,6 +48,16 @@ const HeroSection = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block"
+            onClick={() => {
+              // Google Ads conversion tracking
+              if (typeof window !== 'undefined' && window.gtag) {
+                window.gtag('event', 'conversion', {
+                  'send_to': 'AW-17301984142/34eACMzU7vUaEI6nnbpA',
+                  'value': 1.0,
+                  'currency': 'INR'
+                });
+              }
+            }}
           >
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base sm:text-lg h-12 sm:h-14 px-6 sm:px-8 gap-2">
               Start Growing today

@@ -92,6 +92,16 @@ const Features = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-colors inline-flex items-center justify-center text-base sm:text-lg"
+              onClick={() => {
+                // Google Ads conversion tracking
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'conversion', {
+                    'send_to': 'AW-17301984142/34eACMzU7vUaEI6nnbpA',
+                    'value': 1.0,
+                    'currency': 'INR'
+                  });
+                }
+              }}
             >
               Start Your Project
             </a>

@@ -131,6 +131,16 @@ const Pricing = () => {
                       : "w-full border-border text-foreground hover:bg-muted h-12"
                   }
                   variant={plan.buttonVariant as "default" | "outline"}
+                  onClick={() => {
+                    // Google Ads conversion tracking for pricing buttons
+                    if (typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'conversion', {
+                        'send_to': 'AW-17301984142/34eACMzU7vUaEI6nnbpA',
+                        'value': 1.0,
+                        'currency': 'INR'
+                      });
+                    }
+                  }}
                 >
                   {plan.buttonText}
                   <ArrowRight size={16} className="ml-2" />
